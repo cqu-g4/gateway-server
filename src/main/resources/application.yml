@@ -1,11 +1,12 @@
 spring:
   application:
     name: GATEWAY-SERVER
-  profile:
-    active: dev
+  # profile:
+  #   active: dev
   cloud:
     config:
       name: gateway-server
-  config:
-    import: "optional:configserver:"
+      uri: http://configuration-server:8888
+  config:      
+   import: "optional:configserver:"
 
