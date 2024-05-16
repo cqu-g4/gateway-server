@@ -16,8 +16,8 @@ RUN ls -l /app
 
 ENV JAVA_OPTS "-Xms512m -Xmx512m"
 #ENV APP_ARGS "-Dspring.config.location=/app/conf/application.properties "
-
+ENV PROFILE_ARGS "-Dspring.profiles.active=dev"
 HEALTHCHECK CMD nc -z localhost 8000
 EXPOSE 8000
 
-CMD java $JAVA_OPTS $APP_ARGS -jar /app/gateway-server.jar
+CMD java $JAVA_OPTS $APP_ARGS $PROFILE_ARGS -jar /app/gateway-server.jar
