@@ -13,7 +13,8 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-origins: "*"
+            allowed-origins:
+              - "https://therapy-theta-ten.vercel.app/"
             allowed-methods: "*"
             allowed-headers: "*"
             allow-credentials: true
